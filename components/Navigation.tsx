@@ -16,14 +16,28 @@ import {
 const Navigation = () => {
   const [collapseClasses, setCollapseClasses] = useState('');
   const onExiting = () => setCollapseClasses('collapsing-out');
-
   const onExited = () => setCollapseClasses('');
 
   useEffect(() => {
     let headroom = new Headroom(document.getElementById('navbar-main')!);
-    // initialise
     headroom.init();
-  });
+  }, []);
+
+  const handleMailClick = () => {
+    window.location.href = 'mailto:akioui.ilyas@gmail.com';
+  };
+
+  const handleFacebookClick = () => {
+    window.open('https://www.facebook.com/profile.php?id=100090799121911', '_blank');
+  };
+
+  const handleGithubClick = () => {
+    window.open('https://github.com/Ilyas-00', '_blank');
+  };
+
+  const handleLinkedinClick = () => {
+    window.open('https://www.linkedin.com/in/ilyas-akioui/', '_blank');
+  };
 
   return (
     <>
@@ -69,86 +83,58 @@ const Navigation = () => {
                 </Row>
               </div>
               <Nav className="align-items-lg-center ml-lg-auto" navbar>
-                {socialLinks.facebook && (
-                  <NavItem>
-                    <NavLink
-                      rel="noopener"
-                      aria-label="Facebook"
-                      className="nav-link-icon"
-                      href={socialLinks.facebook}
-                      target="_blank"
-                    >
-                      <i className="fa fa-facebook-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Facebook
-                      </span>
-                    </NavLink>
-                  </NavItem>
-                )}
-                {socialLinks.instagram && (
-                  <NavItem>
-                    <NavLink
-                      rel="noopener"
-                      aria-label="Instagram"
-                      className="nav-link-icon"
-                      href={socialLinks.instagram}
-                      target="_blank"
-                    >
-                      <i className="fa fa-instagram" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Instagram
-                      </span>
-                    </NavLink>
-                  </NavItem>
-                )}
-                {socialLinks.github && (
-                  <NavItem>
-                    <NavLink
-                      rel="noopener"
-                      aria-label="Github"
-                      className="nav-link-icon"
-                      href={socialLinks.github}
-                      target="_blank"
-                    >
-                      <i className="fa fa-github" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Github
-                      </span>
-                    </NavLink>
-                  </NavItem>
-                )}
-                {socialLinks.linkedin && (
-                  <NavItem>
-                    <NavLink
-                      rel="noopener"
-                      aria-label="Linkedin"
-                      className="nav-link-icon"
-                      href={socialLinks.linkedin}
-                      target="_blank"
-                    >
-                      <i className="fa fa-linkedin" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Linkedin
-                      </span>
-                    </NavLink>
-                  </NavItem>
-                )}
-                {socialLinks.twitter && (
-                  <NavItem>
-                    <NavLink
-                      rel="noopener"
-                      aria-label="Twitter"
-                      className="nav-link-icon"
-                      href={socialLinks.twitter}
-                      target="_blank"
-                    >
-                      <i className="fa fa-twitter-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Twitter
-                      </span>
-                    </NavLink>
-                  </NavItem>
-                )}
+                <NavItem>
+                  <NavLink
+                    rel="noopener"
+                    aria-label="Email"
+                    className="nav-link-icon"
+                    onClick={handleMailClick}
+                  >
+                    <i className="fa fa-envelope" />
+                    <span className="nav-link-inner--text d-lg-none ml-2">
+                      Email
+                    </span>
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    rel="noopener"
+                    aria-label="Facebook"
+                    className="nav-link-icon"
+                    onClick={handleFacebookClick}
+                  >
+                    <i className="fa fa-facebook-square" />
+                    <span className="nav-link-inner--text d-lg-none ml-2">
+                      Facebook
+                    </span>
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    rel="noopener"
+                    aria-label="Github"
+                    className="nav-link-icon"
+                    onClick={handleGithubClick}
+                  >
+                    <i className="fa fa-github" />
+                    <span className="nav-link-inner--text d-lg-none ml-2">
+                      Github
+                    </span>
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    rel="noopener"
+                    aria-label="Linkedin"
+                    className="nav-link-icon"
+                    onClick={handleLinkedinClick}
+                  >
+                    <i className="fa fa-linkedin" />
+                    <span className="nav-link-inner--text d-lg-none ml-2">
+                      Linkedin
+                    </span>
+                  </NavLink>
+                </NavItem>
               </Nav>
             </UncontrolledCollapse>
           </Container>

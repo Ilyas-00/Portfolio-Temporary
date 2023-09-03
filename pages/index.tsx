@@ -22,7 +22,7 @@ export default function Home({
 }) {
   return (
     <div>
-      <SEO />
+      {/* <SEO /> */}
       <Navigation />
       <Greetings />
       <Skills />
