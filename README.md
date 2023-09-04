@@ -1,19 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instructions</title>
+</head>
+<body>
+    <pre>
+        <code>
+            # Go into the repository
+            cd Ilyas_portfolio
 
-# Clone this repository
-git clone https://github.com/saadpasta/developerFolio.git
+            # Setup default environment variables
 
-# Go into the repository
-cd developerFolio
+            # For Linux
+            cp env.example .env
+            # For Windows
+            copy env.example .env
 
-# Setup default environment variables
+            # Install dependencies
+            npm install
 
-# For Linux
-cp env.example .env
-# For Windows
-copy env.example .env
-
-# Install dependencies
-npm install
-
-# Start a local dev server
-npm start
+            # Start a local dev server
+            npm start
+        </code>
+    </pre>
+</body>
+</html>
